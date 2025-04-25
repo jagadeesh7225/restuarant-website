@@ -1,0 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    background: url(C:\Users\91905\OneDrive\Desktop\CSE326\movies poster PSD.jpg) no-repeat;
+    background-size: cover;
+    height: 500vh;
+}
+.navbar{
+    height: 200px;
+    width: 1536px;
+    background: rgb(10, 10, 10);
+}
+.logo{
+    width: 140px;
+    height: auto;
+    padding: 20px 100px;
+}

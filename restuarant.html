@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>LOVELY RESTUARANT</title>
+        <link rel="stylesheet" type="text/css" href="index.css"/>
+
+        <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+        list-style: none;
+        text-decoration: none;
+    }
+    
+    
+    :root {
+        --main-color:#ff702a;
+        --text-color:#fff;
+        --bg-color:#1e1c2a;
+        --big-font:5rem;
+        --h2-font:2.25rem;
+        --p-font:0.9rem;
+    }
+    *::selection {
+        background: var(--main-color);
+        color: #fff;
+    }
+    body{
+        color: var(--text-color);
+        background: var(--bg-color) ;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 170px;
+        background: var(--bg-color);
+    }
+    .logo{
+        color:var(--main-color);
+        font-weight:600;
+        font-size: 2.5rem;
+    }
+    .navbar{
+        display: flex;
+    }
+    .navbar a{
+        color:var(--text-color);
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        font-weight: 500;
+    }
+    .navbar a:hover{
+        color: var(--main-color);
+        transition: .4s;
+    }
+    #menu-icon{
+        font-size: 2rem;
+        cursor:pointer;
+        display: none;
+    }
+    section {
+        padding: 70px 17%;
+    }
+    .home{
+        width: 100%;
+        min-height:90wh;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap:1.5rem;
+        align-items: center;
+        
+    }
+    .home-img img{
+        max-width: 100%;
+        width: 800px;
+        height: auto;
+    }
+    .home-text h1{
+        font-size: var(--big-font);
+        color: var(--main-color);
+    }
+    .home-text h2{
+        font-size: var(--h2-font);
+        margin: 1rem 0 2rem;
+    }
+    .btn{
+        display: inline-block;
+        padding:20px 20px;
+        background: var(--main-color);
+        color: #fff;
+        border-radius: 0.5rem;
+        transition: .4s;
+    }
+    .btn:hover{
+        transform: scale(1.2) ;
+    }
+    .about{
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        grid-gap: 1.5rem;
+        align-items: center;
+    }
+    .about-img img{
+        max-width: 100%;
+        width:480px;
+        height:auto;
+    }
+    .about-text span{
+        color: var(--main-color);
+        font-weight:600 ;
+    }
+    .about-text h2{
+        font-size: var(--h2-font);
+    }
+    .about-text h2 p{
+        margin: 0.8rem 0 1.8rem;
+        line-height: 1.7;
+    }
+    .heading{
+        text-align: center;
+    }
+    .heading span{
+        color:var(--main-color);
+        font-weight: 800;
+    }
+    .heading h2{
+        font-size: var(--h2-font);
+    }
+    .menu-container{
+        display: grid;
+        grid-template-columns:repeat(auto-fit,minmax(220px, auto));
+        grid-gap:1.5rem;
+        align-items: center;
+    }
+    .box{
+        position: relative;
+        margin-top: 4rem;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #feeee7;
+        padding:20px;
+        border-radius: 0.5rem;
+    }
+    .box-img{
+        width: 220px;
+        height: 220px;
+    }
+    .box-img img{
+        width: 100%;
+        height:100% ;
+    }
+    
+    .box h2{
+        font-size: 1.3rem;
+        color: var(--bg-color);
+    
+    }
+    .box h3 {
+        color: var(--bg-color);
+        font-size: 1rem;
+        font-weight: 400;
+        margin:4px 0 10px;
+    }
+    .box span{
+        font-size: var(--p-font);
+        color: var(--main-color);
+        font-weight: 400;
+    }
+    .box .bx{
+        background: var(--main-color);
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 30px;
+        padding: 7px 10px;
+        border-radius: 0 0.5rem 0 0.5rem;
+    } 
+    .Service-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(240px,auto));
+        grid-gap:1.5rem ;
+        margin-top: 4rem;
+    }
+    .s-box{
+        text-align: center;
+        padding: 20px 30px;
+    }
+    .s-box img{
+        width: 90px;
+       
+    }
+    .s-box h3{
+        margin: 4px 0 10px;
+        color:var(--main-color);
+        font-size: 1.2rem;
+    }
+    .s-box p {
+        line-height: 1.7;
+    }
+    .cta{
+        background: #feeee7;
+        padding: 70px 0;
+        text-align: center;
+        width: 66%;
+        margin:100px auto;
+        border-radius: 10px;
+    }
+    .cta h2{
+        font-size: 2rem;
+        color: var(--bg-color);
+        margin-bottom: 30px;
+    }
+    .Main {
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
+    .Footer{
+        padding: 10px 0;
+    }
+    .col{
+        width: 25%;
+    }
+    .col h4{
+        font-size: 1.2rem;
+        color: var(--text-color);
+        margin-bottom :25px;
+        position: relative;
+    
+    }
+    .col h4::before{
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 50px;
+        left: 0;
+        bottom: -8px;
+        background: var(--main-color);
+    }
+    .col ul li:not(:last-child){
+        margin-bottom: 15px;
+    
+    }
+    .col ul li a{
+        color: #9897a9;
+        font-size: 1.1rem;
+        display: block;
+        text-transform: capitalize;
+        transition: .4s;
+    }
+    .col ul li a:hover{
+        color: var(--text-color);
+        transform: translateX(-12px);
+    }
+    .col .social{
+        width: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .col .social a{
+        height: 40px;
+        width: 40px;
+        background:var(--main-color);
+        color: var(--text-color);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        transition: .4s;
+    }
+    .col .social a:hover{
+        transform:scale(1.2);
+        color: var(--bg-color);
+        background:var(--text-color) ;
+    }
+    @media (max-width:1560px){
+        header{
+            padding: 15px 40px;
+        }
+        :root {
+            --big-font:3.5rem;
+            --h2-font:2rem;
+    
+        }
+    }
+    
+    @media (max-width:1140px) {
+        section{
+            padding: 50px 8%;
+        }
+        #menu-icon{
+            display: initial;
+            color: var(--text-color);
+    
+        }
+        header .navbar{
+            position: absolute;
+            top: -400px;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background: #2b2640;
+            transition: .3s;
+        }
+        header .navbar.active{
+            top: 70px;
+        }
+        .navbar a{
+            padding: 1.5rem;
+            display: block;
+        }
+        .col{
+            width: 50%;
+            margin-bottom: 10px;
+        }
+    }
+    
+    
+    @media (max-width:720px){
+        header{
+            padding: 10px 16px;
+        }
+        .home{
+            grid-template-columns : 1fr;
+            text-align: center;
+    
+        }
+        .about{
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        .about-img{
+            order: 2;
+        }
+        section{
+            padding: 100px 7%;
+    
+        }
+    
+    }
+    @media (max-width: 575px){
+        .col{
+            width: 100%;
+            
+        }
+    }
+</style>
+    </head>
+    <body>
+
+        <header>
+            <a href="#" class="logo">Foods</a>
+            <div class="bx bx-menu" id = "menu-icon"></div>
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="D:\1st sem\restuarant\about us.html">About</a></li>
+                <li><a href="D:\1st sem\restuarant\menu1.html">Menu</a></li>
+                <li><a href="D:\1st sem\restuarant\chefs.html">chefs</a></li>
+                <li><a href="#Services">Service</a></li>
+                <li><a href="D:\1st sem\restuarant\contactres.html">Contact</a></li>
+
+            </ul>
+        </header>
+    <!----------home start------------>
+    <section class="home" id="home">
+            <div class="home-text">
+                <h1>LOVELY RESTUARANT</h1>
+                <h2>Foods The<br>Most Precious Things</h2>
+                <a href="#" class="btn">Today's Menu</a>
+            </div> 
+            <div class="home-img">
+                <img src="D:\1st sem\restuarant\home.png">
+
+            </div>
+        
+    </section>
+    <!----------about start------------>
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="D:\1st sem\restuarant\about.png">
+        </div>
+
+        <div class="about-text">
+            <span>About Us</span>
+            <h2>We speak the good <br>food language </h2>
+            <p>daily restuarant opening timming is 9:00AM.dialy so many people are without food our aim is to give good food at affortable prize</p>
+            <p> The different cuisines available in your restaurants must be clearly mentioned on the page so that customers can easily understand your specialization</p>
+            <p>-The address and contact number or any other details about contact must be included on the page.</p>   
+            <p>-The opening and closing times of the restaurant must be clearly mentioned in as simple a way as possible so that customers can visit accordingly.</p>
+            <p>-The reviews of some of the previous customers happy with the food and your service art h restaurant must be mentioned so that new customers are attracted.</p>
+            <br>
+           <a href="#" class="btn">Learn more</a>
+
+        </div>
+
+    </section>
+
+    <!----------menu start------------>
+    <section class="menu" id="menu"></section>
+        <div class="heading">
+            <span>Food menu</span>
+            <h2>Fresh taste at great price</h2>
+        </div>
+        <div class="menu-container">
+            <div class="box">
+                <div class="box-img">
+                    <align-items><center><br><img src="D:\1st sem\restuarant\Burger-PNG-Image.png"></center></align-items>
+                    
+                    
+
+                </div>
+                <align-items><center><h2>Special Veg Burger</h2>
+                    <h3>Tasty Food</h3>
+                    <span><b>₹ 300/-</b><em> only</em></span></center></align-items>
+                    <i class='bx bx-cart-alt'></i>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <align-items><center><br><img src="D:\1st sem\restuarant\Paneer-Express.png"></center></align-items>
+                   
+
+                </div>
+                <align-items><center><h2>Panner Pizza</h2>
+                    <h3>Tasty Food</h3>
+                    <span><b>₹ 200/-</b><em> only</em> </span></center></align-items>
+                    <i class='bx bx-cart-alt'></i>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <align-items><center><img src="D:\1st sem\restuarant\pasta.jpg"></center></align-items>
+
+                </div>
+                <align-items><center><h2>Pasta</h2>
+                    <h3>Tasty Food</h3>
+                    <span><b>₹ 200/-</b><em> only</em></span></center></align-items>
+                    <i class='bx bx-cart-alt'></i>
+            </div>
+
+        </div>
+    </section>
+
+    <!----------service start------------>
+    <section class="Services" id="Services">
+        <div class="heading">
+            <span>Services</span>
+            <h2>We provide best quality food</h2>
+        </div>
+        <div class="Service-container">
+            <div class="s-box">
+                <img src="D:\1st sem\restuarant\packing.png">
+                <h3>place Order</h3>
+                <p>place your order to enjoy fresh and good food</p>
+            </div>
+
+            <div class="s-box">
+                <img src="D:\1st sem\restuarant\delivery.png">
+                <h3>delivery</h3>
+                <p>safe&fast delivery to your house </p>
+            </div>
+
+            <div class="s-box">
+                <img src="D:\1st sem\restuarant\s3.png">
+                <h3>take away</h3>
+                <p>take your order with in time and enjoy the food</p>
+            </div>
+        </div>
+    </section>
+
+    <!----------call to action------------>
+    <section class="cta">
+        <h2>we make quality food <br>Everyday</h2>
+        <a href="#" class="btn">Let's Talk</a>
+
+    </section>
+
+    <!----------footer start------------>
+    <section id="contact">
+        <div class="Footer">
+            <div class="Main">
+                <div class="col">
+                    <h4>Menu links</h4>
+                    <ul>
+                        <li><a herf="#">Home</a></li>
+                        <li><a herf="D:\1st sem\restuarant\about us.html">About</a></li>
+                        <li><a href="D:\1st sem\restuarant\menu1.html">Menu</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="D:\1st sem\restuarant\contactres.html">contact</a></li>
+                        <li><a herf="D:\1st sem\restuarant\chefs.html">chefs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col">
+                    <h4>Our Service</h4>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Product Management</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="D:\1st sem\restuarant\about us.html">About</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h4>Contact Us</h4>
+                    <div class="social">
+                    <a href="https://www.facebook.com/profile.php?id=100083179505253" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com/jagadeesh_7225/" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                    <a href="" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="#" target="_blank"><i class='bx bxl-youtube' ></i></a>
+
+                    </div>
+
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!----javascript---->
+    <script type="text/javascript" src="index.js"></script>
+
+
+    </body>
+</html>

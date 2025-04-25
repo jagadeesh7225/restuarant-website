@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Team Section</title>
+        <link rel="stylesheet"href="styleteam.css">
+        <link rel="stylesheet" href="general.css">
+    </head>
+    <style>
+        #chef{
+    padding: 25px 10px 25px 10px;
+    background:url(https://www.wallpapertip.com/wmimgs/20-202456_pizza-restaurant-background.jpg)no-repeat;
+    background-size:cover;
+}
+.section_text{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(254, 252, 252);
+    font-weight: 150;
+}
+.sub_text{
+    color: #ff6f00;
+    font-weight: 120;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.para{
+    color: #f5954b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    
+}
+.container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.container .box{
+    margin: 15px;
+    position: relative;
+    box-shadow: 15px 17px 35px 0 rgba(0,0,0,0.5);
+    text-align: center;
+    position: relative;
+    width: 300px;
+    height: 440px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.container .box:hover{
+    z-index: 1;
+    transform: scale(1.20);
+}
+.container .box .imgbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.container .box .imgbox::before{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(180deg,#f5954b,#000);
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transition: 0.5s;
+}
+.container .box:hover .imgbox::before{
+    opacity: 1;
+}
+.container .box .imgbox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.container .box .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+}
+.container .box .content .sub_text{
+    margin-bottom :5px;
+    font-size: 20px;
+    transition: 0.5s;
+    transform: translateY(200px);
+}
+.container .box:hover .content .sub_text{
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+.container .box .content .para{
+    font-size: 15px;
+    transition: 0.5s;
+    padding: 5px;
+    transform: translateY(200px);
+}
+.container .box:hover .content .para{
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+.cara{
+    color: white;
+    font-size: 50px;
+}
+    </style>
+    <body>
+        <div id="chef">
+            <h1 class="section_text">OUR CHEFS</h1>
+            <div class="container">
+                <div class="box">
+                    <div class="imgbox">
+                        <img src="D:\1st sem\restuarant\chefs1res.jpg">
+                    </div>
+                    <div class="content">
+                        <div>
+                        <h2 class="sub_text">Jamie oliver(Head Chef)</h2>
+                        <p class="para">A RECIPE HAS NO SOUL YOU,AS THE COOK,MUST BRING THE SOUL TO THE RECIPE </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgbox">
+                        <img src="D:\1st sem\restuarant\chefs res.jpg">
+                    </div>
+                    <div class="content">
+                        <div>
+                        <h2 class="sub_text">Ritu dalmia(assit chef)</h2>
+                        <p class="para">FOOD MAY BE ESSENTIAL AS FUEL FOR THE BODY,BUT GOOD FOOD IF FUEL FOR THE SOUL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgbox">
+                        <img src="D:\1st sem\restuarant\chefs res3.jpeg">
+                    </div>
+                    <div class="content">
+                        <div>
+                        <h2 class="sub_text">Gordon(Relief Chef)</h2>
+                        <p class="para">FOOD IS OUR COMMON GROUND,A UNIVERSAL EXPERIENCE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class = "cara">A CHEF MUST LIKE A SCIENTIST ORGANISE LIKE AN ACCOUNTANT PLATE LIKE AN ARTIST AND COCK LIKE GRANDMA</p>
+        </div>
+    </body>
+</html>
